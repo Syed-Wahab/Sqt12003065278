@@ -45,8 +45,7 @@ public class BSTsTest {
         System.out.println("postorder");
         BSTs instance = new BSTs();
         instance.postorder();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -57,8 +56,7 @@ public class BSTsTest {
         System.out.println("inorder");
         BSTs instance = new BSTs();
         instance.inorder();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -69,8 +67,7 @@ public class BSTsTest {
         System.out.println("preorder");
         BSTs instance = new BSTs();
         instance.preorder();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -80,11 +77,12 @@ public class BSTsTest {
     public void testIsEmpty() {
         System.out.println("isEmpty");
         BSTs instance = new BSTs();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.isEmpty();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.insertNode(5);
+        result = instance.isEmpty(); //checking two cases
+        assertEquals(false, result);
     }
 
     /**
@@ -95,10 +93,8 @@ public class BSTsTest {
         System.out.println("searchNode");
         BSTs instance = new BSTs();
         boolean expResult = false;
-        boolean result = instance.searchNode();
+        boolean result = instance.searchNode(instance.root, expResult);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -109,9 +105,8 @@ public class BSTsTest {
         System.out.println("insertNode");
         Object data = null;
         BSTs instance = new BSTs();
-        instance.insertNode(data);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int n= 5;
+       instance.insertNode(n);
     }
 
     /**
@@ -121,9 +116,9 @@ public class BSTsTest {
     public void testRemove() {
         System.out.println("remove");
         BSTs instance = new BSTs();
-        instance.remove();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int n= 5;
+        instance.insertNode(n);
+        instance.remove(n,instance.root);
     }
 
     /**
@@ -136,8 +131,6 @@ public class BSTsTest {
         node expResult = null;
         node result = instance.findMax(null);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -148,9 +141,8 @@ public class BSTsTest {
         System.out.println("deleteNode");
         Object data = null;
         BSTs instance = new BSTs();
-        instance.deleteNode(data);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int n=5;
+        instance.deleteNode(n);
     }
 
     /**
@@ -161,8 +153,6 @@ public class BSTsTest {
         System.out.println("printBST");
         BSTs instance = new BSTs();
         instance.printBST();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -172,9 +162,7 @@ public class BSTsTest {
     public void testPrintfun() {
         System.out.println("printfun");
         BSTs instance = new BSTs();
-        instance.printfun(null);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.printfun(instance.root);
     }
     
 }
